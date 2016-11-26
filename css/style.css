@@ -26,10 +26,10 @@ table{
 }
 
 .product-image{
-   height: 30px;
+  height: 30px;
   width: 30px;
   align-items: top;
-    margin: 0 auto;
+  margin: 0 auto;
   max-height: 80%;
   max-width: 80%;
   margin: 0 auto;
@@ -38,11 +38,16 @@ table{
 .clrWhite{
   color: white;
 }
+
 .title{
   vertical-align: top;
   margin-left: 10px;
 }
 
-.centerAlign{
+.alignBy25{
   margin-left: 25%;
+}
+
+.centerAlign{
+  text-align: center;
 }
