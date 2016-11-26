@@ -1,0 +1,42 @@
+<div  ng-controller="mainController">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>
+          UNPUBLISHED ARTICLES
+        </th>
+        <th>
+			AUTHORS
+        </th>
+        <th>
+          <a href="javascript:void(0)" ng-click="orderByField='words'; reverseSort = !reverseSort" class="clrWhite">WORDS 
+	          <span ng-show="orderByField == 'words'">
+	          	<span ng-show="!reverseSort"><i class="fa fa-sort-asc" aria-hidden="true"></i></span>
+	          	<span ng-show="reverseSort"><i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+	          </span>
+          </a>
+        </th>
+        <th>
+          <a href="javascript:void(0)" ng-click="orderByField='publish_at'; reverseSort = !reverseSort" class="clrWhite"	>SUBMITTED 
+          	<span ng-show="orderByField == 'publish_at'">
+          		<span ng-show="!reverseSort"><i class="fa fa-sort-asc" aria-hidden="true"></i></span>
+          		<span ng-show="reverseSort"><i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+          	</span>
+          </a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in items|orderBy:orderByField:reverseSort | limitTo:limit">
+		<td><a href="{{item.url}}"><img src="{{item.image}}" alt="product" class="product-image"><span class="title">{{item.title}}</span></a></td>
+    	<td>{{item.profile.first_name}} {{item.profile.last_name}}</td>
+    	<td>{{item.words}}</td>
+    	<td>{{item.publish_at}}
+<!-- <time am-time-ago="item.publish_at" title="{{ item.publish_at | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}"></time> -->
+    	</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="centerAlign"><button ng-click='loadMore()' class="primary btn">Load More</button></div>
+</div>
+  

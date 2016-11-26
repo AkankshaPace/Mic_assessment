@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+    background-color: white;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+table{
+  max-width:60%;
+    height:80%;
+}
+
+.table thead:first-child tr:first-child th, .table caption+thead tr:first-child td, .table colgroup+thead tr:first-child td, .table thead:first-child tr:first-child td {
+    border-top: 0;
+    background-color: #A52A2A;
+    color: white;
+}
+
+.product{
+  max-height: 200px;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.product-image{
+   height: 30px;
+  width: 30px;
+  align-items: top;
+    margin: 0 auto;
+  max-height: 80%;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.clrWhite{
+  color: white;
+}
+.title{
+  vertical-align: top;
+  margin-left: 10px;
+}
+
+.centerAlign{
+  margin-left: 25%;
+}
