@@ -4,13 +4,17 @@
 html, body {
     height: 100%;
     background-color: white;
-    font-size: 8px;
+    font-size: 9px;
     font-weight: bold;
 }
 
 table{
   max-width:60%;
-    height:80%;
+  height:80%;
+}
+
+.fa{
+  vertical-align: center;
 }
 
 .table thead:first-child tr:first-child th, .table caption+thead tr:first-child td, .table colgroup+thead tr:first-child td, .table thead:first-child tr:first-child td {
@@ -33,6 +37,8 @@ table{
   max-height: 80%;
   max-width: 80%;
   margin: 0 auto;
+  float: left; 
+  margin-right: 5px; 
 }
 
 .clrWhite{
@@ -40,8 +46,10 @@ table{
 }
 
 .title{
-  vertical-align: top;
+  /*vertical-align: left;*/
   margin-left: 10px;
+  font-size: 11px;
+  overflow: hidden;
 }
 
 .alignBy25{
@@ -50,4 +58,26 @@ table{
 
 .centerAlign{
   text-align: center;
+}
+
+.leftAlign{
+  text-align: left;
+  margin-left: 10px;
+}
+
+.verticalAlign{
+  vertical-align: center;
+}
+
+.widthTd9{
+  width: 9%;
+}
+
+.widthTd12{
+  width: 12%;
+}
+
+th{
+  height: 40px;
+  vertical-align: center;
 }
