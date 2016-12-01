@@ -1,7 +1,7 @@
-
 	var mic = angular.module('mic', ['ngRoute', 'ngCookies','angularMoment']);
 	// configuring routes
-	mic.config(function($routeProvider) {
+
+	mic.config(function($routeProvider, $locationProvider) {
 		$routeProvider
 
 			// route for the product page
@@ -10,7 +10,15 @@
 				controller  : 'mainController'
 			})
 
-			.otherwise({ redirectTo: '/' });
+			.when('/index.html', {
+				templateUrl : 'views/content.html',
+				controller  : 'mainController'
+			})
+
+			//.otherwise({ redirectTo: '/' });
+			 .otherwise({
+		        templateUrl: 'Views/Error404.html'
+		    });
 	});
 
 	mic.controller('mainController', function($scope,$http,$route,userPersistenceService,moment) {
@@ -18,7 +26,7 @@
 		$scope.limit= 10;
 		$scope.orderByField = userPersistenceService.getCookieData('orderByField');
 		$scope.reverseSort = !userPersistenceService.getCookieData('reverseSort');
-
+		
 		//retrieving data from articles.json file
 	    $http.get('assets/articles.json')
 	        .success(function(data) {
@@ -29,7 +37,7 @@
 	            $scope.items = [{heading:"Error",description:"Could not load json   data"}];
 	        });
 
-	    //retrievinf more data from more-articles.json file    
+	    //retrieving more data from more-articles.json file    
 	    $http.get('assets/more-articles.json')
 	        .success(function(data1) {
 	            $scope.items = $scope.items.concat(data1);
